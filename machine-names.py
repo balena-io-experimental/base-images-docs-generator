@@ -13,11 +13,14 @@ import helpers
 repo = helpers.init_repo()
 
 # Get all device contracts from the hw.device-type folder
-devices = os.listdir(cfg.repo_dir + "/contracts/hw.device-type")
+devices = helpers.get_devices()
 
 output = []
 
 for device in devices:
+
+    if device in cfg.exclude:
+        continue
 
     if os.path.isdir(cfg.repo_dir + f"/contracts/hw.device-type/{device}"):
 
