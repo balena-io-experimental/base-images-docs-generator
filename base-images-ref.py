@@ -132,6 +132,9 @@ for arch in sorted(architectures):
     # Use a list comprehension to filter by device arch
     device_arch = [v for v in listings if v["arch"] == arch]
 
+    # Now sort devices based on the arch
+    device_arch = sorted(device_arch, key=lambda k: k['name'])
+
     for d in device_arch:
 
         # Print device headers
