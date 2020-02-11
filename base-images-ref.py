@@ -182,6 +182,9 @@ for arch, header in cfg.headers.items():
                             o = "debian"
 
                         tags = ", ".join(operating_systems[o])
+
+                        # Set back to no distro specified
+                        o = ''
                     else:
                         tags = "For available image tags, refer [here](" + docker_hub_link + "/tags)"
 
