@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 """
 Outputs the contents for this page https://www.balena.io/docs/reference/base-images/base-images-ref/
 """
@@ -29,7 +28,8 @@ for arch in arches:
     architectures[arch] = [""]
 
     for o in oses:
-        with open(cfg.repo_dir + f"/contracts/sw.os/{o}/contract.json", 'r') as f:
+        with open(cfg.repo_dir + f"/contracts/sw.os/{o}/contract.json",
+                  'r') as f:
             data = f.read()
 
             # Is this OS supported?
@@ -63,7 +63,8 @@ for l in langs:
 
     incompatible[l] = []
 
-    with open(cfg.repo_dir + f"/contracts/sw.stack/{l}/contract.json", 'r') as f:
+    with open(cfg.repo_dir + f"/contracts/sw.stack/{l}/contract.json",
+              'r') as f:
         data = f.read()
 
         for arch in arches:
@@ -103,8 +104,9 @@ for device in devices:
 
     if os.path.isdir(cfg.repo_dir + f"/contracts/hw.device-type/{device}"):
 
-        with open(cfg.repo_dir + f"/contracts/hw.device-type/{device}/contract.json",
-                  'r') as f:
+        with open(
+                cfg.repo_dir +
+                f"/contracts/hw.device-type/{device}/contract.json", 'r') as f:
 
             contract = json.load(f)
 
