@@ -177,14 +177,11 @@ for arch, header in cfg.headers.items():
                     # Tags
                     if not l:
 
-                        # If no OS provided we default to Debian
-                        if not o:
-                            o = "debian"
-
-                        tags = ", ".join(operating_systems[o])
-
-                        # Set back to no distro specified
-                        o = ''
+                        # Need to get the Debian tags if we don't have a key
+                        if o in operating_systems:
+                            tags = ", ".join(operating_systems[o])
+                        else:
+                            tags = ", ".join(operating_systems['debian'])
                     else:
                         tags = "For available image tags, refer [here](" + docker_hub_link + "/tags)"
 
@@ -201,3 +198,5 @@ for arch, header in cfg.headers.items():
                         print(
                             f"| {base_image_link} | [Docker Hub]({docker_hub_link}), [GitHub]({github_link}) | {tags} |"
                         )
+
+            exit(100)
