@@ -198,5 +198,3 @@ for arch, header in cfg.headers.items():
                         print(
                             f"| {base_image_link} | [Docker Hub]({docker_hub_link}), [GitHub]({github_link}) | {tags} |"
                         )
-
-            exit(100)
