@@ -126,8 +126,8 @@ print(
 )
 
 # Output per architecture
-for arch in sorted(architectures):
-    print(f"\n\n### {cfg.headers[arch]}:")
+for arch, header in cfg.headers.items():
+    print(f"\n\n### {header}:")
 
     # Use a list comprehension to filter by device arch
     device_arch = [v for v in listings if v["arch"] == arch]

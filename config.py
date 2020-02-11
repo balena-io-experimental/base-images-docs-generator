@@ -25,15 +25,15 @@ image_base = "{{ $names.base_images.lib }}/"
 github_repo = "{{ $links.githubBaseImages }}"
 
 # Excluded device list
-exclude = ["nitrogen8mm-dwe", "m2pcie-tx2"]
+exclude = ["m2pcie-tx2"]
 
 # Map arch headers to a nicer output format
 headers = {
-    "aarch64": "aarch64",
-    "amd64": "amd64",
-    "armv5e": "armv5e",
+    "rpi": "ARMv6hf",
     "armv7hf": "ARMv7hf",
+    "aarch64": "aarch64",
     "i386": "i386",
     "i386-nlp": "i386-nlp",
-    "rpi": "ARMv6hf"
+    "amd64": "amd64",
+    "armv5e": "armv5e"
 }
