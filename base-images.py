@@ -29,7 +29,7 @@ for lang in langs:
     for v in data["variants"]:
         print(v["version"])
 
-    # Need to get supportted arch for each lang
+    # Need to get supported arch for each lang
 
 # OS
 print("-------------------------")

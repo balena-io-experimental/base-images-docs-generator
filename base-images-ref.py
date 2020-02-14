@@ -63,6 +63,7 @@ for l in langs:
 
     incompatible[l] = []
 
+    # This does incompatible architectures for a lang
     with open(cfg.repo_dir + f"/contracts/sw.stack/{l}/contract.json",
               'r') as f:
         data = f.read()
@@ -71,7 +72,16 @@ for l in langs:
             if arch not in data:
                 incompatible[l].append(arch)
 
-# Prepend the empty case
+    # This does incompatible langs for an OS
+    with open(cfg.repo_dir + f"/contracts/sw.stack/{l}/contract.json",
+              'r') as f:
+        data = f.read()
+
+        for compat_os in operating_systems:
+            if compat_os not in data:
+                incompatible[l].append(compat_os)
+
+# Prepend the empty case - hack todo
 langs.insert(0, "")
 
 # ---------------------------------------------------
@@ -188,8 +198,9 @@ for arch, header in cfg.headers.items():
                         tags = "For available image tags, refer [here](" + docker_hub_link + "/tags)"
 
                     # Finally just check that this isn't incompatible
+                    # This can be incompatible arch for a language or an incompatible os for a language
                     if l in incompatible:
-                        if d["arch"] in incompatible[l]:
+                        if d["arch"] in incompatible[l] or o in incompatible[l]:
                             # Incompatible
                             pass
                         else:
