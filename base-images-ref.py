@@ -184,7 +184,7 @@ for arch, header in cfg.headers.items():
                     if not l:
                         github_link = cfg.device_base + d['id']
                     else:
-                        github_link = cfg.lang_base + l + "/" + d['id']
+                        github_link = cfg.lang_base + l + "/" + d['id'] + "/" + o
 
                     # Tags
                     if not l:
