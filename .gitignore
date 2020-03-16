@@ -1,4 +1,6 @@
 venv/
-output/
-contracts/
+.venv
 __pycache__/
+.vscode/
+.idea/
+contracts/
