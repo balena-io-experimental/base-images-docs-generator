@@ -34,6 +34,5 @@ headers = {
     "aarch64": "aarch64",
     "i386": "i386",
     "i386-nlp": "i386-nlp",
-    "amd64": "amd64",
-    "armv5e": "armv5e"
+    "amd64": "amd64"
 }
