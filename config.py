@@ -25,7 +25,7 @@ image_base = "{{ $names.base_images.lib }}/"
 github_repo = "{{ $links.githubBaseImages }}"
 
 # Excluded device list
-exclude = ["m2pcie-tx2"]
+exclude = []
 
 # Incompatible arch and os
 # TODO determine dynamically

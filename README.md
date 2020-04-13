@@ -1,6 +1,10 @@
-# BaseImages documentation generator
+# Base Images documentation generator
 
-A series of tools to aid in autogenerating documentation for the [base images section](https://www.balena.io/docs/reference/base-images/base-images/) of the [balena documentation](https://www.balena.io/docs/).
+A series of tools to aid in autogenerating documentation for the
+[base images section](https://www.balena.io/docs/reference/base-images/base-images/) of the
+[balena documentation](https://www.balena.io/docs/). This documentation should be generated on merge in the base images
+repo and then dynamically brought into the docs site at build time, so this is a temporary solution to get the docs up
+to date.
 
 ## Base Image List
 
