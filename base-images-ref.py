@@ -191,9 +191,20 @@ for arch, header in cfg.headers.items():
 
                         # Need to get the Debian tags if we don't have a key
                         if o in operating_systems:
-                            tags = ", ".join(operating_systems[o])
+
+                            tags = operating_systems[o].copy()
+                            if d["arch"] in cfg.incompatible.keys():
+                                if o in cfg.incompatible[d["arch"]].keys():
+                                    tags.remove(cfg.incompatible[d["arch"]][o])
+                            tags = ", ".join(tags)
                         else:
-                            tags = ", ".join(operating_systems['debian'])
+
+                            tags = operating_systems['debian'].copy()
+                            if d["arch"] in cfg.incompatible.keys():
+                                if 'debian' in cfg.incompatible[d["arch"]].keys():
+                                    tags.remove(cfg.incompatible[d["arch"]]['debian'])
+                            tags = ", ".join(tags)
+
                     else:
                         tags = "For available image tags, refer [here](" + docker_hub_link + "/tags)"
 
