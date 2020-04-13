@@ -27,6 +27,20 @@ github_repo = "{{ $links.githubBaseImages }}"
 # Excluded device list
 exclude = ["m2pcie-tx2"]
 
+# Incompatible arch and os
+# TODO determine dynamically
+incompatible = {
+    "rpi": {
+        "debian": "sid"
+    },
+    "i386": {
+        "ubuntu": "focal"
+    },
+    "i386-nlp": {
+        "ubuntu": "focal"
+    }
+}
+
 # Map arch headers to a nicer output format
 headers = {
     "rpi": "ARMv6hf",
